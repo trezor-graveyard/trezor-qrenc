@@ -4,12 +4,13 @@
 int main(int argc, char *argv[])
 {
   int side, i, j, a;
+  unsigned char bitdata[MAX_BITDATA];
+
   if (argc < 2) {
     printf("Pass string as first command line parameter.\n");
     return 1;
   }
 
-  unsigned char bitdata[MAX_BITDATA];
   side = QREncode(QR_LEVEL_H, 0, argv[1], 0, bitdata);
 
   for (i = 0; i < side+2; i++) printf("██");
