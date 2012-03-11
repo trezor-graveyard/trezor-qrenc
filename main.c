@@ -1,11 +1,11 @@
-#include "qr_encode.h"
 #include <stdio.h>
+#include "qr_encode.h"
 
-int main(int argc, char *argv[])
+int main()
 {
 	int side, i, j, a;
 	unsigned char bitdata[MAX_BITDATA];
-	unsigned char str[1024];
+	char str[1024];
 
 	printf("Enter string: ");
 	fgets(str, 1024, stdin);

@@ -56,4 +56,4 @@
 //
 // * function returns the size of the square side
 //
-int QREncode(int nLevel, int nVersion, const char *lpsSource, int sourcelen, unsigned char *result);
+int QREncode(int nLevel, int nVersion, const char *lpsSource, size_t sourcelen, unsigned char *result);
