@@ -10,7 +10,9 @@ int main()
 	printf("Enter string: ");
 	fgets(str, 1024, stdin);
 
-	side = QREncode(QR_LEVEL_H, 0, str, 0, bitdata);
+	side = QREncode(QR_LEVEL_L, 0, str, 0, bitdata);
+
+	printf("side: %d\n", side);
 
 	for (i = 0; i < side+2; i++) printf("██");
 	printf("\n");
