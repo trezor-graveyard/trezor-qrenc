@@ -208,7 +208,7 @@ int GetBitLength(unsigned char nMode, int ncData, int nVerGroup)
 
 int EncodeSourceData(const char* lpsSource, int ncLength, int nVerGroup,int m_nBlockLength[MAX_DATACODEWORD],unsigned char m_byBlockMode[MAX_DATACODEWORD],unsigned char m_byDataCodeWord[MAX_DATACODEWORD])
 {
-	memset(m_nBlockLength, 0, sizeof(m_nBlockLength));
+	memset(m_nBlockLength, 0, MAX_DATACODEWORD * sizeof(int));
 	int i, j;
 	// Investigate whether continuing characters (bytes) which mode is what
 	for (m_ncDataBlock = i = 0; i < ncLength; ++i) {
@@ -1080,7 +1080,7 @@ void FormatModule(unsigned char m_byModuleData[177][177],unsigned char m_byAllCo
 {
 	int i, j;
 
-	memset(m_byModuleData, 0, sizeof(m_byModuleData));
+	memset(m_byModuleData, 0, MAX_ALLCODEWORD * sizeof(m_byAllCodeWord));
 
 
 	//Function module placement
