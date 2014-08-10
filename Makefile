@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -Wno-missing-braces
+CFLAGS=-Wall -Wextra
 
 all: test
 

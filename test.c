@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include "qr_encode.h"
 
-int main()
+int main(void)
 {
 	int side, i, j, a;
 	unsigned char bitdata[MAX_BITDATA];
-	char str[1024];
+	char str[2048];
 
 	printf("Enter string: ");
-	fgets(str, 1024, stdin);
+	fgets(str, sizeof(str), stdin);
 
-	side = QREncode(QR_LEVEL_L, 0, str, 0, bitdata);
+	side = qr_encode(QR_LEVEL_M, 0, str, 0, bitdata);
 
 	printf("side: %d\n", side);
 
@@ -19,8 +19,8 @@ int main()
 	for (i = 0; i < side; i++) {
 		printf("██");
 		for (j = 0; j< side; j++) {
-			a = i*side + j;
-			printf((bitdata[a/8] & (1<<(7-a%8))) ? "  " : "██");
+			a = i * side + j;
+			printf((bitdata[a / 8] & (1 << (7 - a % 8))) ? "  " : "██");
 		}
 		printf("██");
 		printf("\n");

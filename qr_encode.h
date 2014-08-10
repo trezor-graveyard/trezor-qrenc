@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+#include <stdint.h>
+
 // Constants
 
 // Error correction level
@@ -48,12 +50,12 @@
 #define MAX_BITDATA        3917 // Maximum size of bit data
 
 //
-// * nLevel - error correction level, use QR_LEVEL_? macros
-// * nVersion - version of the code (1-40), use 0 for autodetection
-// * lpsSource - source data
-// * sourcelen - length of the source data, use 0 when passing zero-terminated string
-// * result - array to write, writes to bits.
+// * level - error correction level, use QR_LEVEL_? macros
+// * version - version of the code (1-40), use 0 for autodetection
+// * source - source data
+// * source_len - length of the source data, use 0 when passing zero-terminated string
+// * result - array to write, writes to bits
 //
 // * function returns the size of the square side
 //
-int QREncode(int nLevel, int nVersion, const char *lpsSource, size_t sourcelen, unsigned char *result);
+int qr_encode(int level, int version, const char *source, size_t source_len, uint8_t *result);
