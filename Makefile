@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra
+CFLAGS=-Wall -Wextra -g -ggdb3
 CHECKLIBS = -lcheck -lrt -lpthread -lm
 
 all: test tests
