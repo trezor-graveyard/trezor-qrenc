@@ -1026,7 +1026,7 @@ void putBitToPos(uint32_t pos, int bw, uint8_t *bits)
 	}
 }
 
-int qr_encode(int level, int version, const char *source, size_t source_len, unsigned char *result)
+int qr_encode(int level, int version, const char *source, size_t source_len, uint8_t *result)
 {
 	static uint8_t m_byModuleData[MAX_MODULESIZE][MAX_MODULESIZE]; // [x][y]
 	static uint8_t m_byAllCodeWord[MAX_ALLCODEWORD];
