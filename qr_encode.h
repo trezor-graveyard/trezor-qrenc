@@ -43,11 +43,13 @@
 #define QR_VERSION_L       2    // 27 - 40
 
 // Length constants
-#define MAX_ALLCODEWORD    3706 // Maximum total number of code words
-#define MAX_DATACODEWORD   2956 // Maximum data word code (version 40-L)
-#define MAX_CODEBLOCK      153  // Maximum number of block data code word (including RS code word)
-#define MAX_MODULESIZE     177  // Maximum number of modules in a side
-#define MAX_BITDATA        3917 // Maximum size of bit data
+#ifndef QR_MAX_MODULESIZE
+#define QR_MAX_MODULESIZE     177                                                // Maximum number of modules in a side
+#endif
+#define QR_MAX_BITDATA        ((QR_MAX_MODULESIZE * QR_MAX_MODULESIZE + 7) / 8)  // Maximum size of bit data
+#define QR_MAX_ALLCODEWORD    3706                                               // Maximum total number of code words
+#define QR_MAX_DATACODEWORD   2956                                               // Maximum data word code (version 40-L)
+#define QR_MAX_CODEBLOCK      153                                                // Maximum number of block data code word (including RS code word)
 
 //
 // * level - error correction level, use QR_LEVEL_? macros

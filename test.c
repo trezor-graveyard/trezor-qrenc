@@ -4,7 +4,7 @@
 int main(void)
 {
 	int side, i, j, a;
-	uint8_t bitdata[MAX_BITDATA];
+	uint8_t bitdata[QR_MAX_BITDATA];
 	char str[2048];
 
 	printf("Enter string: ");

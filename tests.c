@@ -35,7 +35,7 @@ inline int bitsize(int side) {
 START_TEST(test_numeral)
 {
 	int side;
-	uint8_t bitdata[MAX_BITDATA];
+	uint8_t bitdata[QR_MAX_BITDATA];
 
 	memset(bitdata, sizeof(bitdata), 0);
 	side = qr_encode(QR_LEVEL_L, 0, "1234567890", 0, bitdata);
@@ -82,7 +82,7 @@ END_TEST
 START_TEST(test_alphabet)
 {
 	int side;
-	unsigned char bitdata[MAX_BITDATA];
+	unsigned char bitdata[QR_MAX_BITDATA];
 
 	memset(bitdata, sizeof(bitdata), 0);
 	side = qr_encode(QR_LEVEL_L, 0, "test", 0, bitdata);

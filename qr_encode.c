@@ -34,12 +34,12 @@ int m_nMaskingNo;
 int m_ncDataCodeWordBit, m_ncAllCodeWord, nEncodeVersion;
 int m_ncDataBlock;
 int m_nSymbleSize;
-int m_nBlockLength[MAX_DATACODEWORD];
-uint8_t m_byModuleData[MAX_MODULESIZE][MAX_MODULESIZE]; // [x][y]
-uint8_t m_byAllCodeWord[MAX_ALLCODEWORD];
-uint8_t m_byBlockMode[MAX_DATACODEWORD];
-uint8_t m_byDataCodeWord[MAX_DATACODEWORD];
-uint8_t m_byRSWork[MAX_CODEBLOCK];
+int m_nBlockLength[QR_MAX_DATACODEWORD];
+uint8_t m_byModuleData[QR_MAX_MODULESIZE][QR_MAX_MODULESIZE]; // [x][y]
+uint8_t m_byAllCodeWord[QR_MAX_ALLCODEWORD];
+uint8_t m_byBlockMode[QR_MAX_DATACODEWORD];
+uint8_t m_byDataCodeWord[QR_MAX_DATACODEWORD];
+uint8_t m_byRSWork[QR_MAX_CODEBLOCK];
 
 int IsNumeralData(uint8_t c)
 {
@@ -73,7 +73,7 @@ uint8_t AlphabetToBinary(uint8_t c)
 int SetBitStream(int nIndex, uint16_t wData, int ncData)
 {
 	int i;
-	if (nIndex == -1 || nIndex + ncData > MAX_DATACODEWORD * 8) return -1;
+	if (nIndex == -1 || nIndex + ncData > QR_MAX_DATACODEWORD * 8) return -1;
 	for (i = 0; i < ncData; i++) {
 		if (wData & (1 << (ncData - i - 1))) {
 			m_byDataCodeWord[(nIndex + i) / 8] |= 1 << (7 - ((nIndex + i) % 8));
@@ -937,7 +937,7 @@ int qr_encode(int level, int version, const char *source, size_t source_len, uin
 	m_nLevel = level;
 	m_nMaskingNo = -1;
 
-	memset(result, 0, MAX_BITDATA);
+	memset(result, 0, QR_MAX_BITDATA);
 	// If the data length is not specified, acquired by lstrlen
 	size_t ncLength = source_len > 0 ? source_len : strlen(source);
 
