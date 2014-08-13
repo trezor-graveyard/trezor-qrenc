@@ -448,6 +448,7 @@ int GetEncodeVersion(int nVersion, const char* lpsSource, int ncLength)
 					}
 				}
 			}
+#if QR_MAX_VERSION >= QR_VERSION_M
 			else
 			if (i == QR_VERSION_M) {
 				for (j = 10; j <= 26; j++) {
@@ -456,6 +457,8 @@ int GetEncodeVersion(int nVersion, const char* lpsSource, int ncLength)
 					}
 				}
 			}
+#endif
+#if QR_MAX_VERSION >= QR_VERSION_L
 			else
 			if (i == QR_VERSION_L) {
 				for (j = 27; j <= 40; j++) {
@@ -464,6 +467,7 @@ int GetEncodeVersion(int nVersion, const char* lpsSource, int ncLength)
 					}
 				}
 			}
+#endif
 		}
 	}
 

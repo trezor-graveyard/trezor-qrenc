@@ -1,6 +1,28 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -g -ggdb3
 CHECKLIBS = -lcheck -lrt -lpthread -lm
+
+OPTFLAGS  = -Os -g
+
+CFLAGS   += $(OPTFLAGS) \
+            -W \
+            -Wall \
+            -Wextra \
+            -Wimplicit-function-declaration \
+            -Wredundant-decls \
+            -Wstrict-prototypes \
+            -Wundef \
+            -Wshadow \
+            -Wpointer-arith \
+            -Wformat \
+            -Wreturn-type \
+            -Wsign-compare \
+            -Wmultichar \
+            -Wformat-nonliteral \
+            -Winit-self \
+            -Wuninitialized \
+            -Wformat-security \
+            -Werror \
+            -DQR_MAX_VERSION=0
 
 all: test tests
 
