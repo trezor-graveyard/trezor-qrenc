@@ -22,6 +22,7 @@
  * SOFTWARE.
  */
 
+#include <stdlib.h>
 #include <stdint.h>
 
 // Constants
@@ -42,13 +43,31 @@
 #define QR_VERSION_M       1    // 10 - 26
 #define QR_VERSION_L       2    // 27 - 40
 
-// Length constants
-#ifndef QR_MAX_MODULESIZE
-#define QR_MAX_MODULESIZE     177                                                // Maximum number of modules in a side
+#ifndef QR_MAX_VERSION
+#define QR_MAX_VERSION QR_VERSION_L
 #endif
-#define QR_MAX_BITDATA        ((QR_MAX_MODULESIZE * QR_MAX_MODULESIZE + 7) / 8)  // Maximum size of bit data
+
+// Length constants
+
+#if QR_MAX_VERSION == QR_VERSION_S
+#define QR_MAX_MODULESIZE     (9 * 4 + 17)                                       // Maximum number of modules in a side
+#define QR_MAX_ALLCODEWORD    292                                                // Maximum total number of code words
+#define QR_MAX_DATACODEWORD   232                                                // Maximum data word code
+#endif
+
+#if QR_MAX_VERSION == QR_VERSION_M
+#define QR_MAX_MODULESIZE     (26 * 4 + 17)                                      // Maximum number of modules in a side
+#define QR_MAX_ALLCODEWORD    1706                                               // Maximum total number of code words
+#define QR_MAX_DATACODEWORD   1370                                               // Maximum data word code
+#endif
+
+#if QR_MAX_VERSION == QR_VERSION_L
+#define QR_MAX_MODULESIZE     (40 * 4 + 17)                                      // Maximum number of modules in a side
 #define QR_MAX_ALLCODEWORD    3706                                               // Maximum total number of code words
-#define QR_MAX_DATACODEWORD   2956                                               // Maximum data word code (version 40-L)
+#define QR_MAX_DATACODEWORD   2956                                               // Maximum data word code
+#endif
+
+#define QR_MAX_BITDATA        ((QR_MAX_MODULESIZE * QR_MAX_MODULESIZE + 7) / 8)  // Maximum size of bit data
 #define QR_MAX_CODEBLOCK      153                                                // Maximum number of block data code word (including RS code word)
 
 //
