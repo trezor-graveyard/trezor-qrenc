@@ -104,6 +104,7 @@ START_TEST(test_alphabet)
 	ck_assert_int_eq(side, 21);
 	ck_assert_int_eq(memcmp(bitdata, RESULT_ALPHA_4, bitsize(side)), 0);
 
+#if QR_MAX_VERSION >= QR_VERSION_M
 	const char *lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at risus sodales, rhoncus arcu eu, accumsan augue. Mauris a mauris et ante porta eleifend. Sed condimentum metus vitae tortor bibendum, et scelerisque quam placerat. Nam at sapien lacus. Proin magna ipsum, dapibus non dignissim a, posuere vitae nulla. Donec pretium odio sit amet lorem interdum, nec ullamcorper diam iaculis. Mauris at est sit amet purus venenatis pretium vitae sed magna.";
 
 	memset(bitdata, sizeof(bitdata), 0);
@@ -125,6 +126,7 @@ START_TEST(test_alphabet)
 	side = qr_encode(QR_LEVEL_H, 0, lipsum, 0, bitdata);
 	ck_assert_int_eq(side, 109);
 	ck_assert_int_eq(memcmp(bitdata, RESULT_ALPHA_8, bitsize(side)), 0);
+#endif
 }
 END_TEST
 

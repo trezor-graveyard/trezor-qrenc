@@ -39,9 +39,9 @@
 #define QR_MODE_8BIT       2    // rest
 
 // Group version (Model number)
-#define QR_VERSION_S       0    //  1 -  9
-#define QR_VERSION_M       1    // 10 - 26
-#define QR_VERSION_L       2    // 27 - 40
+#define QR_VERSION_S       0    //  1 -  9 (module  21 -  53)
+#define QR_VERSION_M       1    // 10 - 26 (module  57 - 121)
+#define QR_VERSION_L       2    // 27 - 40 (module 125 - 177)
 
 #ifndef QR_MAX_VERSION
 #define QR_MAX_VERSION QR_VERSION_L
