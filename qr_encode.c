@@ -702,11 +702,11 @@ void SetFormatInfoPattern(int nPatternNo)
 	int nFormatInfo;
 	int i;
 	switch (m_nLevel) {
-		case QR_LEVEL_M:
-			nFormatInfo = 0x00; // 00nnnb
-			break;
 		case QR_LEVEL_L:
 			nFormatInfo = 0x08; // 01nnnb
+			break;
+		case QR_LEVEL_M:
+			nFormatInfo = 0x00; // 00nnnb
 			break;
 		case QR_LEVEL_Q:
 			nFormatInfo = 0x18; // 11nnnb
