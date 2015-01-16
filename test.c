@@ -21,6 +21,7 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 #include "qr_encode.h"
 
 int main(void)
@@ -30,7 +31,11 @@ int main(void)
 	char str[2048];
 
 	printf("Enter string: ");
-	fgets(str, sizeof(str), stdin);
+	if (!fgets(str, sizeof(str), stdin)) {
+		return 1;
+	}
+	// remove newline
+	str[strlen(str) - 1] = 0;
 
 	side = qr_encode(QR_LEVEL_M, 0, str, 0, bitdata);
 
