@@ -21,7 +21,6 @@ CFLAGS   += $(OPTFLAGS) \
             -Winit-self \
             -Wuninitialized \
             -Wformat-security \
-            -Werror \
             -DQR_MAX_VERSION=0
 
 all: test tests
