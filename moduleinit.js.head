@@ -1,0 +1,4 @@
+Module['arguments'] = [Module['inputAddress']];
+Module['print'] = function(text) {
+    resolve(text)
+};

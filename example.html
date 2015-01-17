@@ -1,0 +1,24 @@
+<html>
+<head>
+<script type="text/javascript" src="qr.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+<h2>QR experiments</h2>
+Text:<br>
+<input size="50" value="QR STUFF" type="text" id="input"/><br>
+<button type="button">Paint!</button><br> 
+<div id="place">
+</div>
+<script>
+$("button").click(function(){
+    var text=$("#input").val();
+    var maker=new qrMaker(text);
+    maker.imgTag(10,10).then(function(tag){
+        $("#place").html(tag);
+    });
+})
+</script>
+</body>
+
+</html>
