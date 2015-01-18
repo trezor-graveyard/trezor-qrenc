@@ -43,10 +43,10 @@ int main(void)
 
 	for (i = 0; i < side + 2; i++) printf("██");
 	printf("\n");
-	for (j = 0; j < side; j++) {
+	for (i = 0; i < side; i++) {
 		printf("██");
-		for (i = 0; i < side; i++) {
-			a = i * side + j;
+		for (j = 0; j < side; j++) {
+			a = j * side + i;
 			printf((bitdata[a / 8] & (1 << (7 - a % 8))) ? "  " : "██");
 		}
 		printf("██");

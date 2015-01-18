@@ -47,9 +47,9 @@ int main(int argc, char **argv)
 
 
 	//for (i = 0; i < side + 2; i++) printf("1");
-	for (j = 0; j < side; j++) {
+	for (i = 0; i < side; i++) {
 	//	printf("1");
-		for (i = 0; i < side; i++) {
+		for (j = 0; j < side; j++) {
 			a = i * side + j;
 			printf((bitdata[a / 8] & (1 << (7 - a % 8))) ? "0" : "1");
 		}
