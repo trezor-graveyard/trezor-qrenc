@@ -439,9 +439,13 @@ qrMaker.prototype.imgTag=function(cellSize, margin){
 qrMaker.prototype.qrBytes=function(){
     var address=this.address; 
     var res = new Promise(function(resolve,reject){
-        var Module = {
-            inputAddress:address
-        }; 
+    var Module = {
+        inputAddress:address
+    }; 
+    Module['arguments'] = [Module['inputAddress']];
+    Module['print'] = function(text) {
+        resolve(text)
+    };
 
     //this file is ended here, compiled source comes here,
     //ending of the function is in qr.js.foot

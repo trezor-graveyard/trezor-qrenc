@@ -38,8 +38,8 @@ test: qr_encode.o test.o
 	$(CC) $(CFLAGS) qr_encode.o test.o -o test
 
 
-test_arg.js: qr_encode.bc test_arg.bc moduleinit.js.head
-	$(EMCC) $(EMFLAGS) qr_encode.bc test_arg.bc -o test_arg.js --pre-js moduleinit.js.head
+test_arg.js: qr_encode.bc test_arg.bc
+	$(EMCC) $(EMFLAGS) qr_encode.bc test_arg.bc -o test_arg.js
 
 qr.js: qr.js.head qr.js.foot test_arg.js
 	cat qr.js.head test_arg.js qr.js.foot > qr.js
