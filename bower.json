@@ -1,0 +1,29 @@
+{
+  "name": "trezor-qrenc",
+  "version": "0.1.0",
+  "homepage": "https://github.com/trezor/trezor-qrenc",
+  "authors": [
+    "Karel Bilek <kb@karelbilek.com>",
+    "Kazuhiko Arase",
+    "Psytec Inc.",
+    "Alexey Mednyy",
+    "Pavol Rusnak"
+  ],
+  "description": "Cross-compiled QR encoder",
+  "main": [
+    "./compiled/qr.js",
+    "./compiled/test_arg.js.mem"
+  ],
+  "keywords": [
+    "trezor",
+    "qr"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
