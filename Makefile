@@ -2,7 +2,7 @@ CC=gcc
 EMCC=emcc
 CHECKLIBS = -lcheck -lrt -lpthread -lm
 
-OPTFLAGS  = -Os -g
+OPTFLAGS  = -O3 -g
 
 EMFLAGS = -O3
 
