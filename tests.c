@@ -28,7 +28,7 @@
 
 #include "qr_encode.h"
 
-inline int bitsize(int side) {
+int bitsize(int side) {
 	return (side * side + 7) / 8;
 }
 

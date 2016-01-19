@@ -1,6 +1,8 @@
 trezor-qrenc
 ============
 
+[![Build Status](https://travis-ci.org/trezor/trezor-qrenc.svg?branch=master)](https://travis-ci.org/trezor/trezor-qrenc)
+
 Minimalistic QR Code Generator (Encoder)
 
 - Originally written by Psytec Inc.
