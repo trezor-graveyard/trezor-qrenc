@@ -22,6 +22,9 @@
  * SOFTWARE.
  */
 
+#ifndef __QR_ENCODE_H__
+#define __QR_ENCODE_H__
+
 #include <stdlib.h>
 #include <stdint.h>
 
@@ -80,3 +83,5 @@
 // * function returns the size of the square side
 //
 int qr_encode(int level, int version, const char *source, size_t source_len, uint8_t *result);
+
+#endif

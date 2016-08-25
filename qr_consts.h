@@ -22,6 +22,9 @@
  * SOFTWARE.
  */
 
+#ifndef __QR_CONSTS_H__
+#define __QR_CONSTS_H__
+
 typedef struct
 {
 	uint8_t ncRSBlock;		// RS block number
@@ -129,3 +132,5 @@ static const uint8_t* byRSExp[] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, byR
 static const int nIndicatorLenNumeral[] = {10, 12, 14};
 static const int nIndicatorLenAlphabet[] = {9, 11, 13};
 static const int nIndicatorLen8Bit[] = {8, 16, 16};
+
+#endif
