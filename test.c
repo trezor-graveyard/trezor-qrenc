@@ -35,7 +35,9 @@ int main(void)
 		return 1;
 	}
 	// remove newline
-	str[strlen(str) - 1] = 0;
+	if (str[strlen(str) - 1] == '\n') {
+		str[strlen(str) - 1] = 0;
+	}
 
 	side = qr_encode(QR_LEVEL_M, 0, str, 0, bitdata);
 
