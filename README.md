@@ -1,7 +1,7 @@
 trezor-qrenc
 ============
 
-[![Build Status](https://travis-ci.org/trezor/trezor-qrenc.svg?branch=master)](https://travis-ci.org/trezor/trezor-qrenc)
+[![Build Status](https://travis-ci.org/trezor/trezor-qrenc.svg?branch=master)](https://travis-ci.org/trezor/trezor-qrenc) [![gitter](https://badges.gitter.im/trezor/community.svg)](https://gitter.im/trezor/community)
 
 Minimalistic QR Code Generator (Encoder)
 
