@@ -37,7 +37,6 @@ all: test tests
 test: qr_encode.o test.o
 	$(CC) $(CFLAGS) qr_encode.o test.o -o test
 
-
 test_arg.js: qr_encode.bc test_arg.bc
 	$(EMCC) $(EMFLAGS) qr_encode.bc test_arg.bc -o test_arg.js
 
