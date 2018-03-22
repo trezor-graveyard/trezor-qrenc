@@ -974,13 +974,13 @@ int qr_encode(int level, int version, const char *source, size_t source_len, uin
 	// Terminator addition code "0000"
 	int ncDataCodeWord = QR_VersonInfo[m_nVersion].ncDataCodeWord[level];
 
-	int ncTerminater = (ncDataCodeWord * 8) - m_ncDataCodeWordBit;
-	if (ncTerminater < 4) {
-		ncTerminater = 4;
+	int ncTerminator = (ncDataCodeWord * 8) - m_ncDataCodeWordBit;
+	if (ncTerminator > 4) {
+		ncTerminator = 4;
 	}
 
-	if (ncTerminater > 0) {
-		m_ncDataCodeWordBit = SetBitStream(m_ncDataCodeWordBit, 0, ncTerminater);
+	if (ncTerminator > 0) {
+		m_ncDataCodeWordBit = SetBitStream(m_ncDataCodeWordBit, 0, ncTerminator);
 	}
 
 	// Additional padding code "11101100, 00010001"
