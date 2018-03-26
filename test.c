@@ -26,9 +26,33 @@
 
 int main(void)
 {
-	int side, i, j, a;
+	int side, i, j, a, ecclevel;
 	uint8_t bitdata[QR_MAX_BITDATA];
 	char str[2048];
+
+	printf("ECC Level [LMQH]: ");
+	if (!fgets(str, sizeof(str), stdin)) {
+		return 1;
+	}
+	switch (str[0]) {
+	case 'l':
+	case 'L':
+		ecclevel = QR_LEVEL_L;
+		break;
+	case 'm':
+	case 'M':
+	default:
+		ecclevel = QR_LEVEL_M;
+		break;
+	case 'q':
+	case 'Q':
+		ecclevel = QR_LEVEL_Q;
+		break;
+	case 'h':
+	case 'H':
+		ecclevel = QR_LEVEL_H;
+		break;
+	}
 
 	printf("Enter string: ");
 	if (!fgets(str, sizeof(str), stdin)) {
@@ -39,7 +63,7 @@ int main(void)
 		str[strlen(str) - 1] = 0;
 	}
 
-	side = qr_encode(QR_LEVEL_M, 0, str, 0, bitdata);
+	side = qr_encode(ecclevel, 0, str, 0, bitdata);
 
 	printf("side: %d\n", side);
 
@@ -48,7 +72,7 @@ int main(void)
 	for (i = 0; i < side; i++) {
 		printf("██");
 		for (j = 0; j < side; j++) {
-			a = j * side + i;
+			a = i * side + j;
 			printf((bitdata[a / 8] & (1 << (7 - a % 8))) ? "  " : "██");
 		}
 		printf("██");
